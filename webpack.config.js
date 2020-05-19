@@ -13,10 +13,10 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+                exclude: /(node_modules)/,
+                use: [
+                    'babel-loader',
+                ],
             },
             {
                 test:/\.css$/,
@@ -39,10 +39,8 @@ module.exports = {
             {
                 test:/\.json$/,
                 use: [
-                    {
-                        loader: 'json-loader',
-                    },
-                ]
+                      'json-loader',
+                ],
             },
             
         ]
